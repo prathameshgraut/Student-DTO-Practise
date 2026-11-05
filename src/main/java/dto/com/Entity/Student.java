@@ -1,5 +1,6 @@
 package dto.com.Entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +16,6 @@ public class Student {
 	private String email;
 	private String address;
 	private String course;
-	private long mobNo;
 	private Short age;
 	
 	
@@ -48,12 +48,6 @@ public class Student {
 	}
 	public void setCourse(String course) {
 		this.course = course;
-	}
-	public long getMobNo() {
-		return mobNo;
-	}
-	public void setMobNo(long mobNo) {
-		this.mobNo = mobNo;
 	}
 	public Short getAge() {
 		return age;
