@@ -34,7 +34,7 @@ public class Payment {
 		this.amount = amount;
 	}
 	public LocalDate getDate() {
-		return date;
+		return  date;
 	}
 	public void setDate(LocalDate date) {
 		this.date = date;
