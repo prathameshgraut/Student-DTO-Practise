@@ -8,6 +8,8 @@ public class AdmissionDTO {
 	private String studentCourse;
 	private Short studentAge;
 	private double paymentAmount;
+	private int StudentId;
+	
 	public String getStudentName() {
 		return studentName;
 	}
@@ -32,7 +34,6 @@ public class AdmissionDTO {
 	public void setStudentCourse(String studentCourse) {
 		this.studentCourse = studentCourse;
 	}
-	
 	public Short getStudentAge() {
 		return studentAge;
 	}
@@ -44,5 +45,11 @@ public class AdmissionDTO {
 	}
 	public void setPaymentAmount(double paymentAmount) {
 		this.paymentAmount = paymentAmount;
+	}
+	public int getStudentId() {
+		return StudentId;
+	}
+	public void setStudentId(int studentId) {
+		StudentId = studentId;
 	}
 }

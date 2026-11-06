@@ -31,8 +31,29 @@ public class studentAdmissionImpl implements studentAddmissionService{
 		
 		Payment payment = new Payment();
 		payment.setAmount(admissionDTO.getPaymentAmount());
-		student.getId();
+		payment.setStudent(student);
 		payRepo.save(payment);
+	}
+
+	@Override
+	public AdmissionDTO getData(int id) {
+		Student student = stdRepo.findById(id).orElseThrow(()-> new RuntimeException("Student Not Found"));
+		Payment payment = payRepo.findByStudentId(id).orElseThrow(()-> new RuntimeException("Payment Not Found"));
+		
+		AdmissionDTO adDTO =  new AdmissionDTO();
+		
+		adDTO.setStudentName(student.getName());
+		adDTO.setStudentAddress(student.getAddress());
+		adDTO.setStudentEmail(student.getEmail());
+		adDTO.setStudentAge(student.getAge());
+		adDTO.setStudentCourse(student.getCourse());
+		adDTO.setStudentId(student.getId());
+		
+		adDTO.setPaymentAmount(payment.getAmount());
+		
+		
+		
+		return adDTO;
 	}
 	
 }
